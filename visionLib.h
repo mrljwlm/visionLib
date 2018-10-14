@@ -23,8 +23,9 @@ VISIONLIB_API BOOL vlExtractLinearEdge(const FloatArray& lineProfile, const int 
 //============================================================================
 //  Analytic Geometry functions
 //============================================================================
+// 先用最小二乘法拟合圆,如果拟合不高,根据权重已经各点都第一次拟合圆的距离进行二次拟合
 VISIONLIB_API BOOL vlFitCircle(Edge &edgePoints, const FitCircleOptions *pOptions, BestCircle *const pReport);
-//
+// 用最小二乘法拟合圆
 VISIONLIB_API BOOL vlFitCircle(const Curve &curve, BestCircle *const pReport);
 VISIONLIB_API BOOL vlFitLine(Edge &edgePoints, const FitLineOptions *pOptions, BestLine *const pReport);
 VISIONLIB_API BOOL vlGetIntersection(const POINTFLOAT &start1, const POINTFLOAT &end1, const POINTFLOAT &start2, const POINTFLOAT &end2, POINTFLOAT &intersection);
